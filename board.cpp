@@ -9,8 +9,8 @@
 #define ALIVE "\u25AE"          // ▮
 #define DEAD " "                // 
 
-string Board::to_string() {
-    string out;
+std::string Board::to_string() {
+    std::string out;
 
     // top border
     out.append(TOP_LEFT);
@@ -49,7 +49,7 @@ Board::Board(size_t h, size_t w) {
     height = h;
     width = w;
     for (size_t i = 0; i < height; i++) {
-        vector<int> row;
+        std::vector<int> row;
         for (size_t j = 0; j < height; j++) {
             row.push_back(0);
         }

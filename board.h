@@ -4,18 +4,14 @@
 #include <string>
 #include <vector>
 
-using std::vector;
-using std::size_t;
-using std::string;
-
 class Board {
 public:
-    vector<vector<int>> board; // 0 mean dead, 1 means alive
+    std::vector<std::vector<int>> board; // 0 mean dead, 1 means alive
     size_t height, width;
 
     Board(size_t h, size_t w);
 
-    string to_string();
+    std::string to_string();
 
     void set_alive(size_t x, size_t y);
     void set_dead(size_t x, size_t y);
