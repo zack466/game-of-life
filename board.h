@@ -11,12 +11,12 @@ public:
 
     Board(size_t h, size_t w);
 
-    std::string to_string();
+    std::string const to_string();
 
     void set_alive(size_t x, size_t y);
     void set_dead(size_t x, size_t y);
     void iterate();
-    size_t count_neighbors(size_t x, size_t y);
+    size_t const count_neighbors(size_t x, size_t y);
 };
 
 #endif
