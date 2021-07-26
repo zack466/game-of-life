@@ -11,7 +11,7 @@ public:
 
     Board(size_t h, size_t w);
 
-    std::string const to_string();
+    std::string const to_string(bool ansi);
 
     void set_alive(size_t x, size_t y);
     void set_dead(size_t x, size_t y);

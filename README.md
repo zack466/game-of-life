@@ -2,4 +2,4 @@
 
 Build and run with `make run`.
 
-![Example](./example.png)
+![Example](./example.gif)

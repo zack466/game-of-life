@@ -9,7 +9,7 @@
 #define ALIVE "\u25AE"          // ▮
 #define DEAD " "                // 
 
-std::string const Board::to_string() {
+std::string const Board::to_string(bool ansi = false) {
     std::string out;
 
     // top border
@@ -41,6 +41,12 @@ std::string const Board::to_string() {
         out.append(HORIZONTAL);
     }
     out.append(BOTTOM_RIGHT);
+
+    if (ansi) {
+        out.append("\033[");
+        out.append(std::to_string(height + 3));
+        out.append("A");
+    }
 
     return out;
 }

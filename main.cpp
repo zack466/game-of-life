@@ -5,7 +5,7 @@ void print_instructions() {
     std::cout
         << "Conway's Game of Life\n"
         << "Press Enter to iterate the game.\n"
-        << "Quit with EOF (ctrl-D on Linux, ctrl-Z on Windows)."
+        << "Quit with EOF (ctrl-D on Linux, ctrl-Z on Windows).\n"
         << std::endl;
 }
 
@@ -20,10 +20,10 @@ int main() {
     }
 
     std::string line;
-    std::cout << board.to_string() << std::endl;
+    std::cout << board.to_string(true) << std::endl;
     while (getline(std::cin, line)) {
         board.iterate();
-        std::cout << board.to_string() << std::endl;
+        std::cout << board.to_string(true) << std::endl;
     }
     return 0;
 }
