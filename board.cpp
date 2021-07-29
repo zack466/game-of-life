@@ -101,6 +101,7 @@ void Board::iterate() {
 
 size_t const Board::count_neighbors(size_t x, size_t y) {
     size_t total = 0;
+    // Essentially iterates through {-1, 0, 1} X {-1, 0, 1}
     for (int dx = -1; dx <= 1; dx++ ) {
         for (int dy = -1; dy <= 1; dy++ ) {
             if (dx == 0 && dy == 0) continue;
