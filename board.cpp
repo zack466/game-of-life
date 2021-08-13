@@ -1,4 +1,5 @@
 #include "board.h"
+#include <iostream>
 
 #define TOP_LEFT "\u2554"       // ╔
 #define TOP_RIGHT "\u2557"      // ╗
@@ -55,10 +56,7 @@ Board::Board(size_t h, size_t w) {
     height = h;
     width = w;
     for (size_t i = 0; i < height; i++) {
-        std::vector<int> row;
-        for (size_t j = 0; j < height; j++) {
-            row.push_back(0);
-        }
+        std::vector<int> row(width, 0);
         board.push_back(row);
     }
 }
@@ -96,7 +94,11 @@ void Board::iterate() {
             }
         }
     }
-    board = new_board.board;
+    for (size_t i = 0; i < height; i++) {
+        for (size_t j = 0; j < width; j++) {
+            board[i][j] = new_board.board[i][j];
+        }
+    }
 }
 
 size_t const Board::count_neighbors(size_t x, size_t y) {

@@ -1,14 +1,17 @@
-src = $(wildcard *.cpp)
-obj = $(src:.cpp=.o)
+SRC = board.cpp main.cpp
+OBJ = $(SRC:.cpp=.o)
 
 LDFLAGS = -lm
 
-main: $(obj)
-	$(CXX) -o $@ $^ $(LDFLAGS)
+.cpp.o:
+	$(CXX) -g -c -Wall $<
+
+main: $(OBJ)
+	$(CXX) -o $@ $(LDFLAGS) $^
 
 run: main
 	./main
 
 .PHONY: clean
 clean:
-	rm -f $(obj) main
+	rm -f $(OBJ) main

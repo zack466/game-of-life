@@ -12,9 +12,9 @@ void print_instructions() {
 int main() {
     print_instructions();
 
-    Board board(20, 20);
+    Board board(10, 20);
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 5; i++) {
         board.set_alive(i, i);
         board.set_alive(i, i + 1);
     }
